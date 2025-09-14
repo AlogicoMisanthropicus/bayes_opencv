@@ -41,4 +41,35 @@ class Search:
 
         self.sep1 = 0
         self.sep2 = 0
-        self.sep3 = 3
+        self.sep3 = 0
+
+    def draw_map(self, last_known):
+        """Drawing map on screen with scale, last known location
+        and search areas."""
+        cv.line(self.img, (20, 370), (70, 370), (0, 0, 0), 2)
+        cv.putText(self.img, '0', (8, 370), cv.FONT_HERSHEY_PLAIN,
+                   1, (0, 0, 0))
+        cv.putText(self.img,  '50 nautical miles', (71, 370),
+                   cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0))
+        cv.rectangle(self.img, (SA1_CORNERS[0], SA1_CORNERS[1]),
+                     (SA1_CORNERS[2], SA1_CORNERS[3]), (0, 0, 0), 1)
+        cv.putText(self.img, '1', (SA1_CORNERS[0] + 3, SA1_CORNERS[1] + 15),
+                   cv.FONT_HERSHEY_PLAIN, 1, 0)
+        cv.rectangle(self.img, (SA2_CORNERS[0], SA2_CORNERS[1]),
+                     (SA2_CORNERS[2], SA2_CORNERS[3]), (0, 0, 0), 1)
+        cv.putText(self.img, '2', (SA2_CORNERS[0] + 3, SA2_CORNERS[1] + 15),
+                   cv.FONT_HERSHEY_PLAIN, 1, 0)
+        cv.rectangle(self.img, (SA3_CORNERS[0], SA3_CORNERS[1]),
+                     (SA3_CORNERS[2], SA3_CORNERS[3]), (0, 0, 0), 1)
+        cv.putText(self.img, '3', (SA3_CORNERS[0] + 3, SA3_CORNERS[1] + 15),
+                   cv.FONT_HERSHEY_PLAIN, 1, 0)
+        cv.putText(self.img, '+', last_known, cv.FONT_HERSHEY_PLAIN,
+                   1, (0, 0, 255))
+        cv.putText(self.img, '+ = last known location', (240, 355),
+                   cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 255))
+        cv.putText(self.img, '* = real location', (242, 370),
+                   cv.FONT_HERSHEY_PLAIN, 1, (255, 0, 0))
+
+        cv.imshow('Areas to search', self.img)
+        cv.moveWindow('Areas to search', 750, 10)
+        cv.waitKey(500)

@@ -4,22 +4,24 @@ import itertools
 import numpy as np
 import cv2 as cv
 
-MAP_FILE = 'images/search_bay.png'
+MAP_FILE = 'cape_python.png'
 
-SA1_CORNERS = (130, 265, 180, 315)
+SA1_CORNERS = (130, 265, 180, 315)  # (LG X, LG Y, PD X, PD Y)
 SA2_CORNERS = (80, 255, 130, 305)
 SA3_CORNERS = (105, 205, 155, 255)
 
 
 class Search:
-    """A Bayesian game simulating a search and rescue mission
-    with three search areas."""
+    """
+    A Bayesian game simulating a search and rescue
+    mission with three search areas.
+    """
 
     def __init__(self, name):
         self.name = name
         self.img = cv.imread(MAP_FILE, cv.IMREAD_COLOR)
         if self.img is None:
-            print(f'Map file can\'t be loaded from {MAP_FILE}',
+            print(f'Map couldn\'t be read from file {MAP_FILE}',
                   file=sys.stderr)
             sys.exit(1)
 
@@ -44,27 +46,33 @@ class Search:
         self.sep3 = 0
 
     def draw_map(self, last_known):
-        """Drawing map on screen with scale, last known location
-        and search areas."""
+        """
+        Shows the map of the region with a scale, last known
+        location and search areas.
+        """
         cv.line(self.img, (20, 370), (70, 370), (0, 0, 0), 2)
-        cv.putText(self.img, '0', (8, 370), cv.FONT_HERSHEY_PLAIN,
-                   1, (0, 0, 0))
-        cv.putText(self.img,  '50 nautical miles', (71, 370),
+        cv.putText(self.img, '0', (8, 370), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0))
+
+        cv.putText(self.img, '50 nautical miles', (71, 370),
                    cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 0))
         cv.rectangle(self.img, (SA1_CORNERS[0], SA1_CORNERS[1]),
                      (SA1_CORNERS[2], SA1_CORNERS[3]), (0, 0, 0), 1)
-        cv.putText(self.img, '1', (SA1_CORNERS[0] + 3, SA1_CORNERS[1] + 15),
-                   cv.FONT_HERSHEY_PLAIN, 1, 0)
+
+        cv.putText(self.img, '1', (SA1_CORNERS[0] + 3, SA1_CORNERS[1]
+                                   + 15), cv.FONT_HERSHEY_PLAIN, 1, 0)
         cv.rectangle(self.img, (SA2_CORNERS[0], SA2_CORNERS[1]),
                      (SA2_CORNERS[2], SA2_CORNERS[3]), (0, 0, 0), 1)
-        cv.putText(self.img, '2', (SA2_CORNERS[0] + 3, SA2_CORNERS[1] + 15),
-                   cv.FONT_HERSHEY_PLAIN, 1, 0)
+
+        cv.putText(self.img, '2', (SA2_CORNERS[0] + 3,
+                    SA2_CORNERS[1] + 15), cv.FONT_HERSHEY_PLAIN, 1, 0)
         cv.rectangle(self.img, (SA3_CORNERS[0], SA3_CORNERS[1]),
                      (SA3_CORNERS[2], SA3_CORNERS[3]), (0, 0, 0), 1)
+
         cv.putText(self.img, '3', (SA3_CORNERS[0] + 3, SA3_CORNERS[1] + 15),
                    cv.FONT_HERSHEY_PLAIN, 1, 0)
-        cv.putText(self.img, '+', last_known, cv.FONT_HERSHEY_PLAIN,
-                   1, (0, 0, 255))
+        cv.putText(self.img, '+', last_known,
+                   cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 255))
+
         cv.putText(self.img, '+ = last known location', (240, 355),
                    cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 255))
         cv.putText(self.img, '* = real location', (242, 370),
@@ -75,7 +83,7 @@ class Search:
         cv.waitKey(500)
 
     def sailor_final_location(self, num_search_areas):
-        """Returns the x and y coordinates of the sailor's actual location."""
+        """Returns x and y coordinates of real sailor location."""
         self.sailor_actual[0] = np.random.choice(self.sa1.shape[1], 1)
         self.sailor_actual[1] = np.random.choice(self.sa1.shape[0], 1)
 
@@ -94,3 +102,4 @@ class Search:
             y = self.sailor_actual[1] + SA3_CORNERS[1]
             self.area_actual = 3
         return x, y
+

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b41da333-9a7b-4d30-a726-a051dc02004c" name="Changes" comment="Cosmetic fixes and minor refactoring.">
+    <list default="true" id="b41da333-9a7b-4d30-a726-a051dc02004c" name="Changes" comment="Added method for determining a decimal value representing search effectiveness for each search area.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/lerue/Desktop/python/py/bayes_opencv/images&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.popup&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;memory.settings&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -134,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790805250895</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added method for determining a decimal value representing search effectiveness for each search area.">
+      <option name="closed" value="true" />
+      <created>1790805552157</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1790805552157</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +154,7 @@
     <MESSAGE value="Added a method for drawing a map on the screen." />
     <MESSAGE value="Added a method for selecting the final location of the sailor (to be found)." />
     <MESSAGE value="Cosmetic fixes and minor refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cosmetic fixes and minor refactoring." />
+    <MESSAGE value="Added method for determining a decimal value representing search effectiveness for each search area." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method for determining a decimal value representing search effectiveness for each search area." />
   </component>
 </project>

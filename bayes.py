@@ -6,7 +6,7 @@ import cv2 as cv
 
 MAP_FILE = 'cape_python.png'
 
-SA1_CORNERS = (130, 265, 180, 315)  # (LG X, LG Y, PD X, PD Y)
+SA1_CORNERS = (130, 265, 180, 315)  # (LT X, LT Y, PB X, PB Y)
 SA2_CORNERS = (80, 255, 130, 305)
 SA3_CORNERS = (105, 205, 155, 255)
 
@@ -109,3 +109,16 @@ class Search:
         self.sep1 = random.uniform(0.2, 0.9)
         self.sep2 = random.uniform(0.2, 0.9)
         self.sep3 = random.uniform(0.2, 0.9)
+
+    def conduct_search(self, area_num, area_array, effectiveness_prob):
+        """Returns search result and array of already searched coordinates."""
+        local_y_range = range(area_array.shape[0])
+        local_x_range = range(area_array.shape[1])
+        coords = list(itertools.product(local_x_range, local_y_range))
+        random.shuffle(coords)
+        coords = coords[:int((len(coords) * effectiveness_prob))]
+        loc_actual = (self.sailor_actual[0], self.sailor_actual[1])
+        if area_num == self.area_actual and loc_actual in coords:
+            return f'Found in area number {area_num}.'
+        else:
+            return 'Not found.'

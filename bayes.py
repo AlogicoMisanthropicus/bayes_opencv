@@ -122,3 +122,10 @@ class Search:
             return f'Found in area number {area_num}.'
         else:
             return 'Not found.'
+
+    def revise_target_probs(self):
+        """Revise probability for every search area."""
+        denom = self.p1 * (1 - self.sep1) + self.p2 * (1 - self.sep2) + self.p3 * (1 - self.sep3)
+        self.p1 = self.p1 * (1 - self.sep1)
+        self.p2 = self.p2 * (1 - self.sep2)
+        self.p3 = self.p3 * (1 - self.sep3)

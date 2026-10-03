@@ -129,3 +129,21 @@ class Search:
         self.p1 = self.p1 * (1 - self.sep1)
         self.p2 = self.p2 * (1 - self.sep2)
         self.p3 = self.p3 * (1 - self.sep3)
+
+    def draw_menu(self, search_num):
+        """Draw menu with options of search areas."""
+
+        print(f'\nTry nr {search_num}')
+        print(
+            """
+            Choose next search area:
+            0 - Exit program
+            1 - Search first search area two times
+            2 - Search second search area two times
+            3 - Search third search area two times
+            4 - Search first and second search areas
+            5 - Search first and third search areas
+            6 - Search second and third search areas
+            7 - Start over
+            """
+        )

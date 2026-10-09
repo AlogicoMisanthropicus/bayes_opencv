@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b41da333-9a7b-4d30-a726-a051dc02004c" name="Changes" comment="Added method for revise probability for every search area">
+    <list default="true" id="b41da333-9a7b-4d30-a726-a051dc02004c" name="Changes" comment="Added method for drawing search options menu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayes.py" afterDir="false" />
     </list>
@@ -159,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790978393949</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added method for drawing search options menu.">
+      <option name="closed" value="true" />
+      <created>1791064737183</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1791064737183</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +192,7 @@
     <MESSAGE value="Added method for determining a decimal value representing search effectiveness for each search area." />
     <MESSAGE value="Added method for returning search result and an array of already searched coordinates." />
     <MESSAGE value="Added method for revise probability for every search area" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method for revise probability for every search area" />
+    <MESSAGE value="Added method for drawing search options menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method for drawing search options menu." />
   </component>
 </project>
